@@ -12,5 +12,8 @@ public interface CatApiClient {
     @GetMapping("/breeds")
     List<BreedApiResponse> getBreeds(@RequestParam Integer page, @RequestParam Integer limit);
 
+    @GetMapping("/categories")
+    List<BreedApiResponse> getBreedCategories(@RequestParam Integer page, @RequestParam Integer limit);
+
 
 }
