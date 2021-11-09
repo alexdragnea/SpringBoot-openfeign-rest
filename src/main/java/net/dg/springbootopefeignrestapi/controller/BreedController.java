@@ -8,10 +8,7 @@ import net.dg.springbootopefeignrestapi.dto.Breed;
 import net.dg.springbootopefeignrestapi.dto.BreedCategories;
 import net.dg.springbootopefeignrestapi.service.BreedService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -36,6 +33,13 @@ public class BreedController {
                                                                          @RequestParam(required = false) Integer limit) {
         return ResponseEntity.ok(ApiResponse.<List<BreedCategories>>builder()
                 .data(service.getBreedCategories(page, limit))
+                .build());
+    }
+
+    @GetMapping("/breeds/search")
+    public ResponseEntity<ApiResponse<List<Breed>>> searchBreed(@RequestParam String q) {
+        return ResponseEntity.ok(ApiResponse.<List<Breed>>builder()
+                .data(service.findBreedsByKeyword(q))
                 .build());
     }
 

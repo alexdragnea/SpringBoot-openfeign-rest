@@ -2,11 +2,12 @@ package net.dg.springbootopefeignrestapi.client;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
-@FeignClient(name = "catApiClient", url = "https://api.thecatapi.com/v1", configuration = CatApiConfig.class)
+@FeignClient(name = "catApiClient", url = "${thecat.api}", configuration = CatApiConfig.class)
 public interface CatApiClient {
 
     @GetMapping("/breeds")
@@ -14,6 +15,9 @@ public interface CatApiClient {
 
     @GetMapping("/categories")
     List<BreedApiResponse> getBreedCategories(@RequestParam Integer page, @RequestParam Integer limit);
+
+    @GetMapping("/breeds/search")
+    List<BreedApiResponse> searchBreeds(@RequestParam String q);
 
 
 }

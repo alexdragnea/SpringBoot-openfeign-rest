@@ -1,3 +1,6 @@
 client:
   cat-api:
     api-key: 9ba9e22c-8b4a-49f1-ad1b-3dfdace8c759
+
+thecat:
+  api: https://api.thecatapi.com/v1

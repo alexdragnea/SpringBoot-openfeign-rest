@@ -2,10 +2,11 @@ package net.dg.springbootopefeignrestapi.client;
 
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class CatApiAuthInterceptor implements RequestInterceptor {
 
     private final CatApiProperties properties;

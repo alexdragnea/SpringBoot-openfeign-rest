@@ -17,19 +17,26 @@ import java.util.stream.Collectors;
 @Service
 public class BreedService {
 
-    private final CatApiClient client;
+    private final CatApiClient catApiClient;
 
     public List<Breed> getBreeds(Integer page, Integer limit) {
         log.info("Inside of getBreeds of BreedService");
-        return client.getBreeds(page, limit).stream()
+        return catApiClient.getBreeds(page, limit).stream()
                 .map(this::createBreed)
                 .collect(Collectors.toList());
     }
 
     public List<BreedCategories> getBreedCategories(Integer page, Integer limit) {
         log.info("Inside of getBreedCategories of BreedService");
-        return client.getBreedCategories(page, limit).stream()
+        return catApiClient.getBreedCategories(page, limit).stream()
                 .map(this::createBreedCategories)
+                .collect(Collectors.toList());
+    }
+
+    public List<Breed> findBreedsByKeyword(String q) {
+        log.info("Inside of findBreedsByKeword of BreedService");
+        return catApiClient.searchBreeds(q).stream()
+                .map(this::createBreed)
                 .collect(Collectors.toList());
     }
 
@@ -46,6 +53,8 @@ public class BreedService {
                 .name(response.getName())
                 .build();
     }
+
+
 
 
 }
