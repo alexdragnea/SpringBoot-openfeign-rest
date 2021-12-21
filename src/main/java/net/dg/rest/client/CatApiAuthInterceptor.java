@@ -1,9 +1,8 @@
-package net.dg.springbootopefeignrestapi.client;
+package net.dg.rest.client;
 
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 
 @AllArgsConstructor

@@ -1,4 +1,4 @@
-package net.dg.springbootopefeignrestapi.client;
+package net.dg.rest.client;
 
 import lombok.Data;
 

@@ -1,9 +1,8 @@
-package net.dg.springbootopefeignrestapi.client;
+package net.dg.rest.client;
 
 import feign.Logger;
 import feign.RequestInterceptor;
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

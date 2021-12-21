@@ -1,4 +1,4 @@
-package net.dg.springbootopefeignrestapi.dto;
+package net.dg.rest.dto;
 
 import lombok.Data;
 import lombok.experimental.SuperBuilder;

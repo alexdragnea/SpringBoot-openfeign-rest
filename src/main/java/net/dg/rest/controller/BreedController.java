@@ -1,12 +1,11 @@
-package net.dg.springbootopefeignrestapi.controller;
+package net.dg.rest.controller;
 
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import net.dg.springbootopefeignrestapi.dto.ApiResponse;
-import net.dg.springbootopefeignrestapi.dto.Breed;
-import net.dg.springbootopefeignrestapi.dto.BreedCategories;
-import net.dg.springbootopefeignrestapi.service.BreedService;
+import net.dg.rest.dto.ApiResponse;
+import net.dg.rest.dto.Breed;
+import net.dg.rest.dto.BreedCategories;
+import net.dg.rest.service.BreedService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
